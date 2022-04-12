@@ -3,26 +3,22 @@
 </body>
 
 <template name="chat">
-    <div class="container">
+    <div class="wrapper">
         {{#if isUserLoading}}
-            <div class="loading">loading...</div>
+            {{> loader}}
         {{else if isUserLogged}}
             <header class="header">
                 <h1 class="header__title">Chat</h1>
-                <label for="users-select"></label>
-                <select class="header__users users" name="users" id="users-select">
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                </select>
-                <div class="header__log-out" id="log-out">
+                <span class="header__p">User: </span>
+                <button class="header__log-out" id="log-out" title="log-out">
                     {{getUser.username}}
-                </div>
+                </button>
             </header>
 
             {{> messages }}
 
-            {{> form }}
+            {{> messageForm }}
+
         {{else}}
             {{> login }}
         {{/if}}

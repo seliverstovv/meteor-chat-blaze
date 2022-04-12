@@ -1,19 +1,32 @@
 <template name="messages">
     {{#if isLoading}}
-        <div class="loading">loading...</div>
+        {{> loader}}
     {{/if}}
-
-    <ul class="chat-messages">
+    <div class="filter">
+        <label class="filter__select-label" for="users-select">Filter messages by user</label>
+        <select class="filter__users" name="users" id="users-select">
+            <option value="all" selected="selected">ALL</option>
+            {{#each users}}
+                <option value="{{_id}}">{{username}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <ul class="messages">
         {{#each messages}}
             <li class="message">
-                <p class="message__text">{{text}}</p>
-                <button class="message__delete" id="deleteMessage">&times;</button>
-            </li>
-        {{/each}}
-        {{#each users}}
-            <li class="message">
-                <p class="message__text">{{username}}</p>
-                <p class="message__text">{{status.online}}</p>
+                <div class="message__wrapper">
+                    {{#with user userId}}
+                        <div class="user-info">
+                            <span class="message__username">{{username}}</span>
+                            <span class="circle message__status {{#if status}}active{{/if}}"></span>
+                        </div>
+                    {{/with}}
+
+                        <p class="message__text">{{text}}</p>
+                </div>
+                {{#if equals userId}}
+                    <button class="message__delete" id="deleteMessage">&times;</button>
+                {{/if}}
             </li>
         {{/each}}
     </ul>

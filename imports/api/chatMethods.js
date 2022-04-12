@@ -19,6 +19,10 @@ Meteor.methods({
     'message.remove'(messageId) {
         check(messageId, String);
 
+        if (!this.userId) {
+            throw new Meteor.Error('Not authorized.');
+        }
+
         const task = MessageCollection.findOne({ _id: messageId, userId: this.userId });
 
         if (!task) {

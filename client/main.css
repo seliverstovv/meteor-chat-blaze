@@ -1,19 +1,67 @@
 body {
     display: flex;
     align-items: center;
-    justify-content: center;
-    max-height: 100vh;
     padding: 10px;
     font-family: sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+input, button {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 7px;
+}
+
+p, span {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+}
+
+
+.circle {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: darkgray;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.circle.active {
+    background-color: lightgreen;
+}
+
+.wrapper {
+    max-width: 520px;
+    padding: 16px;
+    margin: 0 auto;
+    border: 2px solid tomato;
 }
 
 .header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid blueviolet;
 }
 
 .header__title {
     margin-right: 10px;
+}
+
+.header__p {
+    margin-left: auto;
+    margin-right: 5px;
 }
 
 .header__log-out {
@@ -24,22 +72,63 @@ body {
     margin-right: 20px;
 }
 
-.chat-messages {
-    max-height: calc(100vh - 300px);
+.filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.filter__select-label {
+    margin-right: 16px;
+}
+
+.messages {
+    border: 1px solid pink;
+    max-height: calc(100vh - 500px);
     overflow-y: auto;
 }
 
 .message {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid brown;
 }
 
 .message__text {
     margin-right: 10px;
 }
 
-button {
-    cursor: pointer;
+.message__wrapper {
+    display: flex;
+    flex-flow: column;
+}
+
+.message__username {
+    color: lightcoral;
+    margin-right: 5px;
+}
+
+.message__delete {
+    align-self: flex-start;
+}
+
+.chat-form {
+    display: flex;
+    justify-content: center;
+    min-height: 30px;
+}
+
+.chat-form__label {
+    width: 100%;
+    margin-right: 20px;
+}
+
+.chat-form__input {
+    width: 100%;
+    height: 72%;
 }
 
 .login-form {
@@ -78,3 +167,40 @@ button {
 .login-form > div > button {
     background-color: #62807e;
 }
+
+.lds-ripple {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ripple div {
+    position: absolute;
+    border: 4px solid #fff;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+}
+
+@keyframes lds-ripple {
+    0% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        top: 0px;
+        left: 0px;
+        width: 72px;
+        height: 72px;
+        opacity: 0;
+    }
+}
+
