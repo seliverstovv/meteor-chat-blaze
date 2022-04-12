@@ -1,5 +1,6 @@
 import { check } from 'meteor/check';
 import { MessageCollection } from '../db/MessageCollection';
+import { Meteor } from 'meteor/meteor';
 
 Meteor.methods({
     'message.insert'(text) {

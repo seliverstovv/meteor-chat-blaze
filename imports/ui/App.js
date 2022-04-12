@@ -1,7 +1,6 @@
 import { Template } from 'meteor/templating';
 import './App.html';
 import './Loader.html';
-import './Form';
 import './Messages';
 import './Login';
 

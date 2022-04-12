@@ -1,7 +1,9 @@
 import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
 import '/imports/db/MessageCollection';
+import '/imports/db/UserDataCollection';
 import '/imports/api/chatMethods';
+import '/imports/api/usersDataMethods';
 import '/imports/api/chatPublications';
 
 const users = [
