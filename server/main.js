@@ -17,6 +17,18 @@ const users = [
         username: 'three',
         password: '1234',
     },
+    {
+        username: 'four',
+        password: '1234',
+    },
+    {
+        username: 'five',
+        password: '1234',
+    },
+    {
+        username: 'six',
+        password: '1234',
+    },
 ];
 
 Meteor.startup(() => {
