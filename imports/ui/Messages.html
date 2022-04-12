@@ -1,0 +1,20 @@
+<template name="messages">
+    {{#if isLoading}}
+        <div class="loading">loading...</div>
+    {{/if}}
+
+    <ul class="chat-messages">
+        {{#each messages}}
+            <li class="message">
+                <p class="message__text">{{text}}</p>
+                <button class="message__delete" id="deleteMessage">&times;</button>
+            </li>
+        {{/each}}
+        {{#each users}}
+            <li class="message">
+                <p class="message__text">{{username}}</p>
+                <p class="message__text">{{status.online}}</p>
+            </li>
+        {{/each}}
+    </ul>
+</template>

@@ -1,0 +1,30 @@
+<body>
+{{> chat }}
+</body>
+
+<template name="chat">
+    <div class="container">
+        {{#if isUserLoading}}
+            <div class="loading">loading...</div>
+        {{else if isUserLogged}}
+            <header class="header">
+                <h1 class="header__title">Chat</h1>
+                <label for="users-select"></label>
+                <select class="header__users users" name="users" id="users-select">
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+                <div class="header__log-out" id="log-out">
+                    {{getUser.username}}
+                </div>
+            </header>
+
+            {{> messages }}
+
+            {{> form }}
+        {{else}}
+            {{> login }}
+        {{/if}}
+    </div>
+</template>

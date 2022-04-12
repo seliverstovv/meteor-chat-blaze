@@ -1,0 +1,31 @@
+<template name="login">
+    <form id="login-form">
+        <div>
+            <label>
+                Username
+                <input
+                        type="text"
+                        placeholder="Username"
+                        name="username"
+                        required
+                />
+            </label>
+        </div>
+
+        <div>
+            <label>
+                Password
+                <input
+                        type="password"
+                        placeholder="Password"
+                        name="password"
+                        required
+                        autocomplete
+                />
+            </label>
+        </div>
+        <div>
+            <button type="submit">Log In</button>
+        </div>
+    </form>
+</template>
