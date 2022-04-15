@@ -32,9 +32,7 @@ Template.messages.helpers({
     },
     user(userId) {
         const user = Meteor.users.findOne({ _id: userId });
-        if (!user?.username || !user?.status?.online) {
-            return { username: false, status: false };
-        }
+
         return { username: user.username, status: user.status.online };
     },
     isLoading() {
